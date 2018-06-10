@@ -5,7 +5,6 @@ router.use(bodyParser.json())
 const db = require('../model/config');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
-const SMTPConnection = require('nodemailer/lib/smtp-connection');
 require('dotenv').config();
 
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -36,7 +35,7 @@ router.post('/registration', function (req, res) {
     subject: `Let's see who else use this app`,
     text: "Hello,<br> Please Click on the link to see the other users.<br><a href="+url+"></a>" 
   }
-
+//insert into database
   Account.create({
     name : user.name,
     email : user.email,
@@ -45,7 +44,7 @@ router.post('/registration', function (req, res) {
     if (err) return res.send("Adding faild!");
     res.send(user);
   });
-
+//email sender
   let transporter = nodemailer.createTransport({emailDatas});
 
   transporter.sendMail(emailDetails, function(error, info){
