@@ -1,0 +1,32 @@
+{
+  "name": "risingstacktest",
+  "version": "1.0.0",
+  "description": "Risingstack API test.",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node ./tests/tests.js",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "RisingstackTest"
+  },
+  "author": "Germus Hédi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.2",
+    "mongoose": "^5.1.4",
+    "nodemailer": "^4.6.5",
+    "npm": "^6.1.0"
+  },
+  "devDependencies": {
+    "supertest": "^3.1.0",
+    "tape": "^4.9.1"
+  }
+}
